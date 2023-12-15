@@ -5,8 +5,8 @@ import './App.css'
 import { useState } from 'react';
 
 function App() {
-  const [id, setId] = useState(1);
-  const [isError, setIsError] = useState(false);
+  const [id, setId] = useState<number>(Math.floor(Math.random()*5) + 10);
+  const [isError, setIsError] = useState<boolean>(false);
 
   const {data, isLoading} = useQuery('pokemon' + id,
   async (): Promise<Pokemon> => {
